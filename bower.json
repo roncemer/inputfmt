@@ -1,0 +1,25 @@
+{
+  "name": "roncemer/inputfmt",
+  "authors": [
+    "Ron Cemer <ron@roncemer.com>"
+  ],
+  "description": "Input formatting and filtering for HTML input elements",
+  "main": "inputfmt.js",
+  "dependencies": {
+    "jquery": ">=2.0.0",
+    "rowfetcher": "*"
+  },
+  "keywords": [
+    "Date",
+    "Time",
+    "Numeric",
+    "Currency",
+    "Decimal",
+    "Input",
+    "Formatting",
+    "Filtering",
+    "Filter"
+  ],
+  "license": "BSD",
+  "homepage": "https://github.com/roncemer/inputfmt"
+}
