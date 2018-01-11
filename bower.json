@@ -8,7 +8,7 @@
   "main": "inputfmt.js",
   "dependencies": {
     "jquery": ">=2.0.0",
-    "rowfetcher": "*"
+    "roncemer/rowfetcher": "*"
   },
   "keywords": [
     "Date",
