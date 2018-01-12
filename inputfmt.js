@@ -58,15 +58,26 @@
 		});
 	} // filterElementValues()
 
-	function selectAllOnFocus() {
+	function elementFocused() {
 		var elem = $(this);
 		setTimeout(
 			function() {
+				filterElementValues(elem);
 				elem.select();
 			},
 			1
 		);
-	} // selectAllOnFocus()
+	} // elementFocused()
+
+	function elementBlurred() {
+		var elem = $(this);
+		setTimeout(function() { filterElementValues(elem); }, 1);
+	} // elementBlurred()
+
+	function elementChanged() {
+		var elem = $(this);
+		setTimeout(function() { filterElementValues(elem); }, 1);
+	} // elementChanged()
 
 	// Override the jQuery val() function, so that when an element's value is set using val(),
 	// if it needs filtering/formatting, it gets done automatically.
@@ -117,9 +128,13 @@
 			}
 
 			if ((tagName == 'INPUT') || (tagName == 'PASSWORD')) {
-				elem.unbind('focus', selectAllOnFocus);
+				elem.unbind('focus', elementFocused);
+				elem.unbind('blur', elementBlurred);
+				elem.unbind('change', elementChanged);
 				if (!elem.hasClass('combobox-search')) {
-					elem.focus(selectAllOnFocus);
+					elem.focus(elementFocused);
+					elem.blur(elementBlurred);
+					elem.blur(elementChanged);
 				}
 			}
 
